@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import { COLOR_YELLOW, COLOR_RED } from "src/shared/styles/themes/colors";
+import { rupiah } from "src/shared/constants/constant";
 
 const FilmLinkStyle = styled.p`
   padding-top: 1.2rem;
@@ -13,30 +14,19 @@ const FilmLinkStyle = styled.p`
   color: ${COLOR_YELLOW};
 `;
 
-const BtnAddCart = styled.span`
-  font-size: 1.4rem;
-  text-transform: capitalize;
+const LabelPrice = styled.span`
   margin-left: 18rem;
-  padding: 0;
-  box-sizing: inherit;
-  color: currentColor;
-  text-decoration: none;
-  cursor: pointer;
 `;
 
 interface FilmLinkProps {
   id: number;
-  title: string;
   price: number;
-  AddCart: (id: number, title: string, price: number) => void;
 }
-export default function FilmLink({ id, title, price, AddCart }: FilmLinkProps) {
+export default function FilmLink({ id, price }: FilmLinkProps) {
   return (
     <FilmLinkStyle>
       <Link to={`/film/${id}`}>More info</Link>
-      <BtnAddCart onClick={() => AddCart(id, title, price)}>
-        + Add Cart
-      </BtnAddCart>
+      <LabelPrice>{rupiah(price)}</LabelPrice>
     </FilmLinkStyle>
   );
 }

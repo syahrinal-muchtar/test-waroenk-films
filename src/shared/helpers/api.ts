@@ -16,7 +16,6 @@ export const getAllFilm = async (): Promise<FilmDataType[]> => {
 export const getSingleFilm = async (id: number): Promise<FilmDetailType> => {
   const res = await fetch(`${API_URL}${id}/`);
   const resJson: FilmResponse = await res.json();
-  console.log("cobaRes", resJson);
   const resCharacters = resJson.characters.map((url) =>
     fetch(url)
       .then((data) => data.json())

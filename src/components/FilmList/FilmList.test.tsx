@@ -25,7 +25,7 @@ describe("<FilmList />", () => {
 
     render(
       <Router>
-        <FilmList AddCart={emptyFunction} />
+        <FilmList />
       </Router>
     );
 
@@ -65,7 +65,7 @@ describe("<FilmList />", () => {
 
     render(
       <Router>
-        <FilmList AddCart={emptyFunction} />
+        <FilmList />
       </Router>
     );
 

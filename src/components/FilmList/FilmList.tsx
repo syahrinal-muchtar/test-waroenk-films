@@ -7,11 +7,7 @@ import Loader from "src/shared/components/Loader/Loader";
 
 import useFilmList from "src/shared/hooks/useFilmList";
 
-interface FilmListType {
-  AddCart: (id: number, title: string, price: number) => void;
-}
-
-export default function FilmList({ AddCart }: FilmListType) {
+export default function FilmList() {
   const { loading, filmList } = useFilmList();
   return (
     <Container>
@@ -27,7 +23,6 @@ export default function FilmList({ AddCart }: FilmListType) {
               releaseDate={film.releaseDate}
               title={film.title}
               price={film.price}
-              AddCart={AddCart}
             />
           ))
         )}

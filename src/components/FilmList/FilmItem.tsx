@@ -38,7 +38,6 @@ interface FilmItemType {
   description: string;
   releaseDate: string;
   price: number;
-  AddCart: (id: number, title: string, price: number) => void;
 }
 
 export default function FilmItem({
@@ -47,14 +46,13 @@ export default function FilmItem({
   description,
   releaseDate,
   price,
-  AddCart,
 }: FilmItemType) {
   return (
     <Col>
       <FilmContent>
         <FilmHeader id={id} title={title} releaseDate={releaseDate} />
         <FilmDescription description={description} />
-        <FilmLink id={id} title={title} price={price} AddCart={AddCart} />
+        <FilmLink id={id} price={price} />
       </FilmContent>
     </Col>
   );

@@ -40,7 +40,7 @@ export default function App() {
       <Header setShowCart={setShowCart} />
       <Routes>
         <Route path="/film/:id" element={<FilmDetail AddCart={AddCart} />} />
-        <Route path="/" element={<FilmList AddCart={AddCart} />} />
+        <Route path="/" element={<FilmList />} />
       </Routes>
       <Footer subtotal={subtotal} />
       <GlobalStyle />

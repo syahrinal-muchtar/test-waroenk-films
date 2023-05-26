@@ -26,7 +26,6 @@ describe("<FilmItem />", () => {
           description="Film description"
           releaseDate="2010-10-09"
           price={10000}
-          AddCart={emptyFunction}
         />
       </Router>
     );
